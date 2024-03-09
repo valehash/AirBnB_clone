@@ -1,11 +1,11 @@
-#!/usr/bin/ env python3
+#!/usr/bin/python3
+"""The console"""
 import cmd
 
 class HBNBCommand(cmd.Cmd):
     """the class for the airbnb console"""
 
-    prompt =  '(hbnb)'
-    
+    prompt =  '(hbnb)' 
     def do_EOF(self, line):
         """exits the console """
         return True
