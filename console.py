@@ -126,9 +126,12 @@ class HBNBCommand(cmd.Cmd):
         
         if len(line_arr) < 5:
             print("** value missing **")
+ 
+        if len(line_arr)>=4:
+            setattr(obj, line_arr[2], line_arr[3])
+            obj.save()
 
-        setattr(obj, line_arr[2], line_arr[3])
-        obj.save()
+
 
     def default(self, line):
         """in case a command does not exist it displays the no command <command name>"""
