@@ -20,8 +20,8 @@ class BaseModel:
 			self.id = str(uuid.uuid4())
 			mp.storage.new(self)
 
-	def save(self):
-		"""method to update the value of update_at to current time"""
+    def save(self):
+        """method tp update the value of update_at to current time"""
 		self.updated_at = datetime.now()
 		mp.storage.save()
 
