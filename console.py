@@ -123,6 +123,9 @@ class HBNBCommand(cmd.Cmd):
         if len(line_arr) < 4:
             print("** attribute name or value missing **")
             return
+        
+        if len(line_arr) < 5:
+            print("** value missing **")
 
         setattr(obj, line_arr[2], line_arr[3])
         obj.save()
