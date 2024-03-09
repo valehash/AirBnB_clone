@@ -1,10 +1,13 @@
 #!/usr/bin/python3
 """The python base class for the Airbnb project """
+
 from datetime import datetime
 import uuid
 import models as mp
+
 class BaseModel:
 	"""The base Model class"""
+
 	def __init__(self, *args, **kwargs):
 		"""Init method"""
 		if (kwargs):
