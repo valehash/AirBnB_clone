@@ -4,7 +4,9 @@ from datetime import datetime
 import uuid
 import models as mp
 class BaseModel:
+    """The base Model class"""
 	def __init__(self, *args, **kwargs):
+        """Init method"""
 		if (kwargs):
 			for key,value in kwargs.items():
 				if key != '__class__':

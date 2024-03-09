@@ -10,6 +10,8 @@ from models.place import Place
 from models.review import Review
 
 class FileStorage:
+    """Filestorage class, basically handles serialization and deserailization"""
+
     __file_path = "file.json"
     __objects = {}
 
@@ -22,6 +24,7 @@ class FileStorage:
         self.__objects[key] = obj
     
     def save(self):
+        """save function to save the dictionary to a json"""
         new_dict = {}
         for objects, val in self.__objects.items():
             new_dict[objects] = val.to_dict()
@@ -29,6 +32,7 @@ class FileStorage:
                 json.dump(new_dict, f)
 
     def reload(self):
+        """reads the file json and converts it into objects"""
         try:
             with open(self.__file_path, 'r') as f:
                 obs = json.load(f)
