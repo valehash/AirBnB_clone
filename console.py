@@ -37,7 +37,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         else:
             if line_arr[0] not in cmd.Cmd.class_list:
-                print(f"** class doesn't exist **")
+                print("** class doesn't exist **")
             else:
                 obj = eval(line_arr[0])()
                 print(obj.id)
@@ -51,7 +51,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         else:
             if line_arr[0] not in cmd.Cmd.class_list:
-                print(" ** class doesn't exist ** ")
+                print("** class doesn't exist **")
             else:
                 if len(line_arr) < 2:
                     print("** instance id missing **")
@@ -62,7 +62,7 @@ class HBNBCommand(cmd.Cmd):
                         obj = all_obj[f"{line_arr[0]}.{load_id}"]
                         print(obj)
                     except KeyError:
-                        print("no instance found")
+                        print("** no instance found **")
 
     def do_destroy(self, line):
         """destroys an instance of a class using the id Usage:destroy <class_name> <id>"""
@@ -71,7 +71,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         else:
             if line_arr[0] not in cmd.Cmd.class_list:
-                print(" ** class doesn't exist ** ")
+                print("** class doesn't exist **")
             else:
                 if len(line_arr) < 2:
                     print("** instance id missing **")
@@ -89,7 +89,7 @@ class HBNBCommand(cmd.Cmd):
         line_arr = line.split(" ")
         if line:
             if line_arr[0] not in cmd.Cmd.class_list:
-                print(" ** class doesn't exist ** ")
+                print("** class doesn't exist **")
             else:
                 all_obj = storage.all()
                 obj = [str(v) for k, v in all_obj.items() if line_arr[0] == k.split('.')[0]]
@@ -107,7 +107,7 @@ class HBNBCommand(cmd.Cmd):
             return
         class_name = line_arr[0]
         if class_name not in cmd.Cmd.class_list:
-            print(" ** class doesn't exist ** ")
+            print("** class doesn't exist **")
             return
         if len(line_arr) < 2:
             print("** instance id missing **")
@@ -117,7 +117,7 @@ class HBNBCommand(cmd.Cmd):
         try:
             obj = storage.all()[f"{class_name}.{instance_id}"]
         except KeyError:
-            print(" ** instance not found ** ")
+            print("** no instance found **")
             return
 
         if len(line_arr) < 4:
