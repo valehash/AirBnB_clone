@@ -5,15 +5,13 @@ class HBNBCommand(cmd.Cmd):
     """the class for the airbnb console"""
 
     prompt =  '(hbnb)'
-
-    cmd.Cmd.class_list = class_list
     
     def do_EOF(self, line):
         """exits the console """
         return True
 
     def do_quit(self, line):
-        """exits the console"""
+        """Quit command to exit the program"""
         return True
 
 if __name__ == '__main__':
