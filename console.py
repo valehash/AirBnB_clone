@@ -12,7 +12,7 @@ import cmd
 class HBNBCommand(cmd.Cmd):
     """the class for the airbnb console"""
 
-    prompt =  '(HBNB)'
+    prompt =  '(hbnb)'
 
     class_list = ['BaseModel', "FileStorage", "User", "State", "City", "Amenity", "Place", "Review"]
 
