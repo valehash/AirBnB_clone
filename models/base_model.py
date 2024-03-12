@@ -5,6 +5,7 @@ from datetime import datetime
 import uuid
 import models as mp
 
+
 class BaseModel:
 	"""The base Model class"""
 
